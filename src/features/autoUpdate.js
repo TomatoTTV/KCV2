@@ -15,7 +15,7 @@ async function autoUpdate(contents) {
             contents.send('message', 'Checking for updates...');
             contents.send('version', `KClient2.0 v${version}`)
 
-            let res = await fetch('https://github.com/AwesomeSam9523/KirkaClient/releases/latest/download/version.txt')
+            let res = await fetch('https://github.com/TomatoTTV/KCV2/releases/latest/download/version.txt')
             let text = await res.text();
             text = text.split('\n')[0];
             if (text != version) {
@@ -33,7 +33,7 @@ async function downloadUpdate(contents) {
     let finalURL;
     let fileSize;
     console.log("Starting");
-    const pUrl = "https://api.github.com/repos/AwesomeSam9523/KirkaClient/releases";
+    const pUrl = "https://api.github.com/repos/TomatoTTV/KCV2/releases";
 
     let res = await fetch(pUrl);
     let data = await res.json();
