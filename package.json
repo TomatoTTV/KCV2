@@ -1,0 +1,36 @@
+{
+  "name": "kclient2.0",
+  "version": "1.0.0",
+  "description": "KirkaClient",
+  "main": "src/main.js",
+  "author": "Toamto",
+  "license": "ISC",
+  "dependencies": {
+    "ajv-formats": "^2.1.1",
+    "discord-rich-presence": "0.0.8",
+    "electron-localshortcut": "^3.2.1",
+    "electron-prompt": "^1.6.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^8.0.0",
+    "follow-redirects": "^1.14.1",
+    "get-blob-duration": "^1.2.0",
+    "node-fetch": "^2.6.5",
+    "v8-compile-cache": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomatoTTV/kirkaclient2.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TomatoTTV/kirkaclient2.0/issues"
+  },
+  "homepage": "https://github.com/TomatoTTV/kirkaclient2.0/releases",
+  "devDependencies": {
+    "electron": "^15.1.2",
+    "electron-builder": "^22.13.1"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
