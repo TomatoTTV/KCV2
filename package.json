@@ -1,6 +1,6 @@
 {
   "name": "kclient2.0",
-  "version": "1.1.0.0",
+  "version": "1.1.1.0",
   "description": "KirkaClient",
   "main": "src/main.js",
   "author": "Toamto",
