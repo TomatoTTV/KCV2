@@ -3,31 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KirkaClient</title>
+    <title>KClient2.0</title>
     <script> const { ipcRenderer } = require('electron'); </script>
     <style>
 	
-	        video {
-  	        object-fit: cover;
-  	        width: 100vw;
-  	        height: 100vh;
-  	        position: fixed;
-  	        top: 0;
-  	        left: 0;
-		border-radius: 10px;
-		overflow: hidden !important;
-	        }
-			
+		
 	    body {
             pointer-events: none;
             text-align: center;
             z-index: 1;
-
+            background-color: #171717;
             background-size: certain;
             background-repeat: no-repeat; 
             overflow: hidden;
 
-            border: 6px solid rgba(0, 0, 0, 0.479);
+            border: 6px solid rgba(63, 63, 63, 0.849);
             border-radius: 6px;
 
             position: absolute;
@@ -104,22 +94,19 @@
         }
 
         #kirkalogo {
-            width: 75%;
-            height: 95%;
-            background-image: url("https://media.discordapp.net/attachments/807276551862616114/874243256643358730/kirkalogo.png");
+            width: 90%;
+            height: 90%;
+            background-image: url("https://cdn.discordapp.com/attachments/898311311048441897/898311406577909800/KClient2.0.png");
             background-size: contain;
             background-repeat: no-repeat;
             position: absolute;
-            top: 40%;
-            left: 50%;
+            top: 30%;
+            left: 70%;
             transform: translate(-50%, -28%)
         }
     </style>
 </head>
 <body>
-    <video loop id="myVideo">
-      <source src="https://cdn.discordapp.com/attachments/807276551862616114/893431626372120606/My_Video3.mp4" type="video/mp4" playbackRate=1/> 
-    </video>
     <div class="c">
         <div class="tips" id="tips"></div>
         <div class="name" style="right: 7;" id="version">KirkaClient</div>
