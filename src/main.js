@@ -93,7 +93,7 @@ function createWindow() {
         }
         splash.destroy();
         if (config.get("fullScreenStart", true)) {
-            win.setFullScreen(false);
+            win.setFullScreen(true);
         }
         win.show();
     }
