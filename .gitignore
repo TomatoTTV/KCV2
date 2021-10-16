@@ -8,3 +8,4 @@ resources/
 dist/
 *.yml
 *.asar
+electron-builder.yml

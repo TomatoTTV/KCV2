@@ -1,7 +1,7 @@
 {
   "name": "kclient2.0",
-  "version": "1.1.1.0",
-  "description": "KirkaClient",
+  "version": "1.1.2",
+  "description": "A performance client for Kirka.io",
   "main": "src/main.js",
   "author": "Toamto",
   "license": "ISC",
@@ -9,18 +9,19 @@
     "ajv-formats": "^2.1.1",
     "discord-rich-presence": "0.0.8",
     "electron-localshortcut": "^3.2.1",
-    "electron-packager": "^15.4.0",
     "electron-prompt": "^1.6.2",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.0.0",
+    "electron-updater": "^4.3.9",
     "follow-redirects": "^1.14.1",
     "get-blob-duration": "^1.2.0",
     "node-fetch": "^2.6.5",
+    "update-electron-app": "^2.0.1",
     "v8-compile-cache": "^2.3.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TomatoTTV/KCV2.git"
+    "url": "git+https://github.com/TomatoTTV/KCV3Test.git"
   },
   "bugs": {
     "url": "https://github.com/TomatoTTV/KCV2/issues"
@@ -28,13 +29,13 @@
   "homepage": "https://github.com/TomatoTTV/KCV2/releases",
   "devDependencies": {
     "electron": "^15.1.2",
-    "electron-builder": "^22.13.1"
+    "electron-builder": "^22.13.1",
+    "electron-updater": "^4.3.9"
   },
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "release": "electron-builder"
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   }
 }
