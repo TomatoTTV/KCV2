@@ -15,7 +15,7 @@ async function autoUpdate(contents) {
             contents.send('message', 'Checking for updates...');
             contents.send('version', `KClient2.0 v${version}`)
 
-            let res = await fetch('https://github.com/TomatoTTV/KCV3Test/releases/latest/download/latest.yml')
+            let res = await fetch('https://github.com/TomatoTTV/KCV3Test/releases/latest/download/latest.yml'.version)
             let text = await res.text();
             text = text.split('\n')[0];
             if (text != version) {
