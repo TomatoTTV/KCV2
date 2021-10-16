@@ -6,7 +6,7 @@ const electronLocalshortcut = require("electron-localshortcut");
 const Store = require("electron-store");
 const config = new Store();
 const { DiscordClient, InitRPC } = require('./features/discordRPC')
-//const { autoUpdater } = require('electron-updater');
+const { autoUpdate } = require('./features/autoUpdate');
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -57,7 +57,7 @@ function createWindow() {
     create_set();
 
     win.loadURL('https://kirka.io/');
-    win.loadFile('index.html');
+    
 
     win.on('close', function() {
         app.exit();
@@ -76,13 +76,13 @@ function createWindow() {
 
     win.once("ready-to-show", () => {
         showWin();
-        //autoUpdate.checkForUpdatesAndNotify();
+        //autoUpdater.checkForUpdatesAndNotify();
         if (config.get("discordRPC", true)) {
             InitRPC();
-            DiscordClient(contents);
+            DiscordClient(win.webContents);
         }
         if (config.get("chatType", "Show") !== "Show") {
-            contents.send('chat', false, true);
+            win.webContents.send('chat', false, true);
         }
     });
 
@@ -97,21 +97,22 @@ function createWindow() {
         }
         win.show();
     }
+    
 }
 
 /*ipcMain.on('restart_app', () => {
     autoUpdater.quitAndInstall();
-});*/
+});
 
-/*ipcMain.on('app_version', (event) => {
+ipcMain.on('app_version', (event) => {
     event.sender.send('app_version', {version: app.getVersion() });
-});*/
+});
 
-/*autoUpdater.on('update-available', () => {
+autoUpdater.on('update-available', () => {
     win.webContents.send('update_available');
-  });*/
+  });
 
-/*autoUpdater.on('update-downloaded', () => {
+autoUpdater.on('update-downloaded', () => {
     win.webContents.send('update_downloaded');
   });*/
 
