@@ -6,7 +6,7 @@ const electronLocalshortcut = require("electron-localshortcut");
 const Store = require("electron-store");
 const config = new Store();
 const { DiscordClient, InitRPC } = require('./features/discordRPC')
-const { autoUpdater } = require('electron-updater');
+//const { autoUpdater } = require('electron-updater');
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -76,13 +76,13 @@ function createWindow() {
 
     win.once("ready-to-show", () => {
         showWin();
-        autoUpdate.checkForUpdatesAndNotify();
+        //autoUpdate.checkForUpdatesAndNotify();
         if (config.get("discordRPC", true)) {
             InitRPC();
-            DiscordClient(win.webContents);
+            DiscordClient(contents);
         }
         if (config.get("chatType", "Show") !== "Show") {
-            win.webContents.send('chat', false, true);
+            contents.send('chat', false, true);
         }
     });
 
@@ -93,27 +93,27 @@ function createWindow() {
         }
         splash.destroy();
         if (config.get("fullScreenStart", true)) {
-            win.setFullScreen(true);
+            win.setFullScreen(false);
         }
         win.show();
     }
 }
 
-ipcMain.on('restart_app', () => {
+/*ipcMain.on('restart_app', () => {
     autoUpdater.quitAndInstall();
-});
+});*/
 
-ipcMain.on('app_version', (event) => {
+/*ipcMain.on('app_version', (event) => {
     event.sender.send('app_version', {version: app.getVersion() });
-});
+});*/
 
-autoUpdater.on('update-available', () => {
+/*autoUpdater.on('update-available', () => {
     win.webContents.send('update_available');
-  });
+  });*/
 
-autoUpdater.on('update-downloaded', () => {
+/*autoUpdater.on('update-downloaded', () => {
     win.webContents.send('update_downloaded');
-  });
+  });*/
 
 function createShortcutKeys() {
     const contents = win.webContents;
